@@ -47,7 +47,7 @@ def download_files(music):
     """Download necessary files from Google Drive."""
     download = DriveManager(json.loads(os.getenv('YT_JSON')), [os.getenv('DRIVE_LINK')])
     download.build_drive_service()
-    download.download_files([f"{music}.mp3", 'bg.png', 'font_kn.ttf', 'output_image.png'])
+    download.download_files([f"{music}.mp3", 'bg.png', 'font_hi.ttf', 'output_image.png'])
 
 
 def generate_quote(env_vars):
@@ -114,7 +114,7 @@ def main():
         url = upload_to_s3()
         with open("quote_data.json", "r", encoding="utf-8") as quote_data_file:
             quote_data = json.load(quote_data_file)
-            upload_to_platforms(quote_data)
+            # upload_to_platforms(quote_data)
 
 if __name__ == "__main__":
     main()
