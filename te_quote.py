@@ -81,13 +81,13 @@ def upload_to_s3():
 
 def upload_to_platforms(quote_data):
     """Upload video to YouTube, Facebook, Instagram, and Threads."""
-    # yt = YouTubeUploader().initialize_upload(
-    #     'output_video.mp4',
-    #     quote_data['title'],
-    #     quote_data['description'],
-    #     quote_data['tags'],
-    #     22, False
-    # )
+    yt = YouTubeUploader().initialize_upload(
+        'output_video.mp4',
+        quote_data['title'],
+        quote_data['description'],
+        quote_data['tags'],
+        22, False
+    )
 
     fb = FacebookUploader(quote_data, os.getenv('FB_VERSION'), os.getenv('FB_PAGE_ID'), os.getenv('FB_PAGE_TOKEN'))
     fb.initialize_upload_session('output_video.mp4')
