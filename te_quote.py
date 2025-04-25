@@ -114,7 +114,7 @@ def main():
         url = upload_to_s3()
         with open("quote_data.json", "r", encoding="utf-8") as quote_data_file:
             quote_data = json.load(quote_data_file)
-            # upload_to_platforms(quote_data)
+            upload_to_platforms(quote_data)
 
 if __name__ == "__main__":
     main()
