@@ -106,15 +106,15 @@ def upload_to_platforms(quote_data):
 
 
 def main():
-        # music = random.randint(101, 113)
-        # env_vars = load_environment_variables()
-        # download_files(music)
-        # generate_quote(env_vars)
-        # create_image_and_video(music)
-        # url = upload_to_s3()
+        music = random.randint(101, 113)
+        env_vars = load_environment_variables()
+        download_files(music)
+        generate_quote(env_vars)
+        create_image_and_video(music)
+        url = upload_to_s3()
         with open("quote_data.json", "r", encoding="utf-8") as quote_data_file:
             quote_data = json.load(quote_data_file)
             upload_to_platforms(quote_data)
-
+        print("Done")
 if __name__ == "__main__":
     main()
